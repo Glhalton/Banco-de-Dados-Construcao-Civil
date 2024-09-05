@@ -56,18 +56,6 @@ INSERT INTO Clientes (NomeClientes, TelefoneClientes, EnderecoClientes, CPFClien
 ('Juliana Rocha', 11109876543, 'Rua da Paz, 600, Goiânia - GO', 90123456789, NULL),
 ('Tiago Martins', 11098765432, 'Rua dos Trabalhadores, 700, Brasília - DF', 12345678900, NULL);
 
-INSERT INTO Funcionarios (NomeFuncionarios, MatriculaFuncionarios, TelefoneFuncionarios, EnderecoFuncionarios, CPFFuncionarios, SalarioFuncionarios) VALUES
-('João Pereira', 1001, 11900000001, 'Rua das Acácias, 101, São Paulo - SP', 12345678900, 3000),
-('Mariana Silva', 1002, 11800000002, 'Avenida Paulista, 1100, São Paulo - SP', 23456789001, 3200),
-('Roberto Costa', 1003, 11700000003, 'Rua das Palmeiras, 202, Curitiba - PR', 34567890102, 3500),
-('Camila Almeida', 1004, 11600000004, 'Rua do Centro, 303, Belo Horizonte - MG', 45678901203, 2800),
-('Felipe Santos', 1005, 11500000005, 'Praça Central, 404, Salvador - BA', 56789012304, 3100),
-('Tatiane Oliveira', 1006, 11400000006, 'Avenida Atlântica, 505, Fortaleza - CE', 67890123405, 3400),
-('Eduardo Lima', 1007, 11300000007, 'Rua do Comércio, 606, Porto Alegre - RS', 78901234506, 3300),
-('Juliana Costa', 1008, 11200000008, 'Rua do Sol, 707, Recife - PE', 89012345607, 3000),
-('Lucas Almeida', 1009, 11100000009, 'Rua das Orquídeas, 808, Goiânia - GO', 90123456708, 3100),
-('Marcos Pereira', 1010, 11000000010, 'Rua das Margaridas, 909, Brasília - DF', 12345678901, 3200);
-
 INSERT INTO Funcionarios (NomeFuncionarios, CargoFuncionarios, MatriculaFuncionarios, TelefoneFuncionarios, EnderecoFuncionarios, CPFFuncionarios, SalarioFuncionarios) VALUES
 ('João Pereira', 'Engenheiro Civil', 1001, 11900000001, 'Rua das Acácias, 101, São Paulo - SP', 12345678900, 3000),
 ('Mariana Silva', 'Arquiteto', 1002, 11800000002, 'Avenida Paulista, 1100, São Paulo - SP', 23456789001, 3200),
