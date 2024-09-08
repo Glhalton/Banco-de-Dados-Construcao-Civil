@@ -1,4 +1,4 @@
-#DDL
+#Cenário 1 - DDL (Data Definition Language)
 #Criação do Banco de Dados
 CREATE DATABASE Construmax;
 USE Construmax;
@@ -60,10 +60,3 @@ CREATE TABLE Projetos (
     FOREIGN KEY (IDClientes) REFERENCES Clientes(IDClientes),
     FOREIGN KEY (IDFuncionarios) REFERENCES Funcionarios(IDFuncionarios),
     FOREIGN KEY (IDMateriais) REFERENCES Materiais(IDMateriais));
-    
-    
-DROP TABLE clientes;
-DROP TABLE fornecedores;
-DROP TABLE funcionarios;
-DROP TABLE materiais;
-DROP TABLE projetos;
