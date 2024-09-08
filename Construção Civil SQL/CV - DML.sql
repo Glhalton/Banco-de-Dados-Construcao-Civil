@@ -14,28 +14,28 @@ INSERT INTO Clientes (NomeClientes, TelefoneClientes, EnderecoClientes, CPFClien
 ('Juliana Arocha', 11109876543, 'Rua da Paz, 600, Goiânia - GO', 90123456789, NULL),
 ('TJ gaming', 11098765432, 'Rua dos Trabalhadores, 700, Brasília - DF', NULL, 23001229000146);
 
-INSERT INTO Funcionarios (NomeFuncionarios, CargoFuncionarios, MatriculaFuncionarios, TelefoneFuncionarios, EnderecoFuncionarios, CPFFuncionarios, SalarioFuncionarios) VALUES
-('João Pereira', 'Engenheiro Civil', 1001, 11900000001, 'Rua das Acácias, 101, São Paulo - SP', 12345678900, 3000.00),
-('Mariana Silva', 'Enegenheiro de Projetos', 1002, 11800000002, 'Avenida Paulista, 1100, São Paulo - SP', 23456789001, 3200.00),
-('Roberto Costa', 'Arquiteto', 1003, 11700000003, 'Rua das Palmeiras, 202, Curitiba - PR', 34567890102, 3500.00),
-('Camila Almeida', 'Desenhista Técnico/Projetista', 1004, 11600000004, 'Rua do Centro, 303, Belo Horizonte - MG', 45678901203, 2800.00),
-('Felipe Santos', 'Analsita de Custos', 1005, 11500000005, 'Praça Central, 404, Salvador - BA', 56789012304, 3100.00),
-('Tatiane Oliveira', 'Analista Financeiro', 1006, 11400000006, 'Avenida Atlântica, 505, Fortaleza - CE', 67890123405, 3400.00),
-('Eduardo Lima', 'Gerente de Projetos', 1007, 11300000007, 'Rua do Comércio, 606, Porto Alegre - RS', 78901234506, 3300.00),
-('Juliana Costa', 'Coordenador de Planejamento', 1008, 11200000008, 'Rua do Sol, 707, Recife - PE', 89012345607, 3000.00),
-('Lucas Almeida', 'Analista de Qualidade', 1009, 11100000009, 'Rua das Orquídeas, 808, Goiânia - GO', 90123456708, 3100.00),
-('Marcos Pereira', 'Tecnico em Controle de Qualidade', 1010, 11000000010, 'Rua das Margaridas, 909, Brasília - DF', 12345678901, 3200.00),
-('Ana Souza', 'Técnico de Segurança no Trabalho', 1011, 11987654321, 'Rua das Flores, 123, São Paulo, SP', 12345678903, 8500.00),
-('Carlos Pereira', 'Médico do Trabalho', 1012, 11923456789, 'Avenida Paulista, 1000, São Paulo, SP', 23456789012, 5500.00),
-('Mariana Lima', 'Comprador', 1013, 21987654321, 'Rua da Glória, 250, Rio de Janeiro, RJ', '34567890123', 7500.00),
-('João Oliveira', 'Especialista em Logistica', 1014, 21923456789, 'Rua do Comércio, 45, Rio de Janeiro, RJ', 45678901234, 6000.00),
-('Fernanda Silva', 'Recrutador', 1015, 31987654321, 'Avenida Afonso Pena, 500, Belo Horizonte, MG', '56789012345', 4800.00),
-('Ricardo Santos', 'Gerente de Recursos Humanos', 1016, 31923456789, 'Rua dos Andradas, 750, Belo Horizonte, MG', 67890123456, 9500.00),
-('Juliana Costa', 'Gerente Juridico', 1017, 51987654321, 'Rua Padre Cacique, 100, Porto Alegre, RS', 78901234567, 8200.00),
-('Marcelo Almeida', 'Advogado', 1018, 51923456789, 'Avenida Ipiranga, 200, Porto Alegre, RS', 89012345678, 7000.00),
-('Patrícia Ferreira', 'Engenheiro Ambiental', 1019, 41987654321, 'Rua XV de Novembro, 150, Curitiba, PR', 90123456789, 5600.00),
-('Rafael Borges', 'Auditor de Sustentabilidade', 1020, 41923456789, 'Avenida Sete de Setembro, 300, Curitiba, PR', 01234567890, 6700.00),
-('Rosival Soares', 'Estagiario', 1021, 9491748831, 'R. Santa Fé, 777, Xique-Xique, BA', 09876543210, 0.12);
+INSERT INTO Funcionarios (IDDepartamentos, NomeFuncionarios, CargoFuncionarios, MatriculaFuncionarios, TelefoneFuncionarios, EnderecoFuncionarios, CPFFuncionarios, SalarioFuncionarios) VALUES
+(1, 'João Pereira', 'Engenheiro Civil', 1001, 11900000001, 'Rua das Acácias, 101, São Paulo - SP', 12345678900, 3000.00),
+(1, 'Mariana Silva', 'Enegenheiro de Projetos', 1002, 11800000002, 'Avenida Paulista, 1100, São Paulo - SP', 23456789001, 3200.00),
+(2, 'Roberto Costa', 'Arquiteto', 1003, 11700000003, 'Rua das Palmeiras, 202, Curitiba - PR', 34567890102, 3500.00),
+(2, 'Camila Almeida', 'Desenhista Técnico/Projetista', 1004, 11600000004, 'Rua do Centro, 303, Belo Horizonte - MG', 45678901203, 2800.00),
+(3, 'Felipe Santos', 'Analsita de Custos', 1005, 11500000005, 'Praça Central, 404, Salvador - BA', 56789012304, 3100.00),
+(3, 'Tatiane Oliveira', 'Analista Financeiro', 1006, 11400000006, 'Avenida Atlântica, 505, Fortaleza - CE', 67890123405, 3400.00),
+(4, 'Eduardo Lima', 'Gerente de Projetos', 1007, 11300000007, 'Rua do Comércio, 606, Porto Alegre - RS', 78901234506, 3300.00),
+(4, 'Juliana Costa', 'Coordenador de Planejamento', 1008, 11200000008, 'Rua do Sol, 707, Recife - PE', 89012345607, 3000.00),
+(5, 'Lucas Almeida', 'Analista de Qualidade', 1009, 11100000009, 'Rua das Orquídeas, 808, Goiânia - GO', 90123456708, 3100.00),
+(5, 'Marcos Pereira', 'Tecnico em Controle de Qualidade', 1010, 11000000010, 'Rua das Margaridas, 909, Brasília - DF', 12345678901, 3200.00),
+(6, 'Ana Souza', 'Técnico de Segurança no Trabalho', 1011, 11987654321, 'Rua das Flores, 123, São Paulo, SP', 12345678903, 8500.00),
+(6, 'Carlos Pereira', 'Médico do Trabalho', 1012, 11923456789, 'Avenida Paulista, 1000, São Paulo, SP', 23456789012, 5500.00),
+(7, 'Mariana Lima', 'Comprador', 1013, 21987654321, 'Rua da Glória, 250, Rio de Janeiro, RJ', '34567890123', 7500.00),
+(7, 'João Oliveira', 'Especialista em Logistica', 1014, 21923456789, 'Rua do Comércio, 45, Rio de Janeiro, RJ', 45678901234, 6000.00),
+(8, 'Fernanda Silva', 'Recrutador', 1015, 31987654321, 'Avenida Afonso Pena, 500, Belo Horizonte, MG', '56789012345', 4800.00),
+(8, 'Ricardo Santos', 'Gerente de Recursos Humanos', 1016, 31923456789, 'Rua dos Andradas, 750, Belo Horizonte, MG', 67890123456, 9500.00),
+(9, 'Juliana Costa', 'Gerente Juridico', 1017, 51987654321, 'Rua Padre Cacique, 100, Porto Alegre, RS', 78901234567, 8200.00),
+(9, 'Marcelo Almeida', 'Advogado', 1018, 51923456789, 'Avenida Ipiranga, 200, Porto Alegre, RS', 89012345678, 7000.00),
+(10, 'Patrícia Ferreira', 'Engenheiro Ambiental', 1019, 41987654321, 'Rua XV de Novembro, 150, Curitiba, PR', 90123456789, 5600.00),
+(10, 'Rafael Borges', 'Auditor de Sustentabilidade', 1020, 41923456789, 'Avenida Sete de Setembro, 300, Curitiba, PR', 01234567890, 6700.00),
+(NULL, 'Rosival Soares', 'Estagiario', 1021, 9491748831, 'R. Santa Fé, 777, Xique-Xique, BA', 09876543210, 0.12);
 
 INSERT INTO Fornecedores (NomeFornecedores, TelefoneFornecedores, CNPJFornecedores, EnderecoFornecedores) VALUES
 ('Construmaterial Ltda.', 11911122334, 12345678000123, 'Rua das Laranjeiras, 123, São Paulo - SP'),
@@ -92,7 +92,7 @@ DELETE FROM Funcionarios WHERE NomeFuncionarios = "Rosival Soares";
 DELETE FROM Funcionarios WHERE NomeFuncionarios = "Rafael Borges";
 
 SELECT Funcionarios.NomeFuncionarios, Departamentos.NomeDepartamento FROM Funcionarios INNER JOIN Departamentos 
-ON Funcionarios.IDFuncionarios = Departamentos.IDDepartamentos; 
+ON Funcionarios.IDDepartamentos = Departamentos.IDDepartamentos; 
 
 SELECT * FROM clientes;
 SELECT * FROM fornecedores;
@@ -100,6 +100,3 @@ SELECT * FROM funcionarios;
 SELECT * FROM materiais;
 SELECT * FROM projetos;
 SELECT * FROM departamentos;
-
-INSERT INTO funcionarios (IDDepartamentos) VALUES
-(1),(1),(2),(2),(3),(3),(4),(4),(5),(5),(6),(6),(7),(7),(8),(8),(9),(9),(10),(10);
