@@ -27,10 +27,10 @@ CREATE TABLE Funcionarios (
 	TelefoneFuncionarios BIGINT,
 	EnderecoFuncionarios VARCHAR(200),
 	CPFFuncionarios BIGINT,
-	SalarioFuncionarios DECIMAL(10, 2),
+	SalarioFuncionarios DECIMAL(10,2),
     FOREIGN KEY (IDDepartamentos) REFERENCES Departamentos(IDDepartamentos),
     UNIQUE (CPFFuncionarios));
-
+    
 CREATE TABLE Fornecedores (
 	IDFornecedores BIGINT PRIMARY KEY AUTO_INCREMENT,
 	NomeFornecedores VARCHAR(100),
@@ -60,3 +60,6 @@ CREATE TABLE Projetos (
     FOREIGN KEY (IDClientes) REFERENCES Clientes(IDClientes),
     FOREIGN KEY (IDFuncionarios) REFERENCES Funcionarios(IDFuncionarios),
     FOREIGN KEY (IDMateriais) REFERENCES Materiais(IDMateriais));
+
+
+DROP TABLE projetos, materiais, funcionarios, fornecedores, departamentos, clientes;
