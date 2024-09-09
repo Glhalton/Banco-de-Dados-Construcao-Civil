@@ -1,7 +1,7 @@
-#DML
+#Cenário 2 - DML (Data Manipulation Language)
 USE Construmax;
 
-#Inserção de informações nas tabelas    
+#Inserção de registros nas tabelas    
 INSERT INTO Clientes (NomeClientes, TelefoneClientes, EnderecoClientes, CPFClientes, CNPJClientes) VALUES
 ('Alice Sousa', 11987654321, 'Rua das Flores, 123, São Paulo - SP', 12345678909, NULL),
 ('Carlos Silva', 11876543210, 'Avenida Paulista, 1000, São Paulo - SP', 23456789012, NULL),
@@ -26,7 +26,8 @@ INSERT INTO Departamentos (NomeDepartamento) VALUES
 ("Departamento Juridico"),
 ("Departamento de Meio ambiente e Sustentabilidade");
 
-INSERT INTO Funcionarios (IDDepartamentos, NomeFuncionarios, CargoFuncionarios, MatriculaFuncionarios, TelefoneFuncionarios, EnderecoFuncionarios, CPFFuncionarios, SalarioFuncionarios) VALUES
+INSERT INTO Funcionarios (IDDepartamentos, NomeFuncionarios, CargoFuncionarios, MatriculaFuncionarios, 
+	TelefoneFuncionarios, EnderecoFuncionarios, CPFFuncionarios, SalarioFuncionarios) VALUES
 (1, 'João Pereira', 'Engenheiro Civil', 1001, 11900000001, 'Rua das Acácias, 101, São Paulo - SP', 12345678900, 3000.00),
 (1, 'Mariana Silva', 'Enegenheiro de Projetos', 1002, 11800000002, 'Avenida Paulista, 1100, São Paulo - SP', 23456789001, 3200.00),
 (2, 'Roberto Costa', 'Arquiteto', 1003, 11700000003, 'Rua das Palmeiras, 202, Curitiba - PR', 34567890102, 3500.00),
@@ -85,13 +86,13 @@ INSERT INTO Projetos (IDClientes, IDFuncionarios, IDMateriais, NomeProjeto, Desc
 (9, 9, 9, 'Shopping Center', 'Construção de um novo shopping center em área urbana.', 1500000.00, '2024-09-10', '2025-12-10'),
 (10, 10, 10, 'Edificio Comercial', 'Construção de um edificio comercial pequeno com 4 quartos em uma area ponto de venda.', 600000.00, '2024-10-01', '2025-08-01');
 
-# Update e Delete de informações de um funcionario
+SET SQL_SAFE_UPDATES = 0;
+# Update e Delete dos dados/registros de um funcionario
 UPDATE Funcionarios SET SalarioFuncionarios = 0.50 WHERE NomeFuncionarios = "Rosival Soares";
 UPDATE Funcionarios SET CargoFuncionarios = "Auxiliar de TI" WHERE CargoFuncionarios = "Estagiario" ;
 
 DELETE FROM Funcionarios WHERE NomeFuncionarios = "Rosival Soares";
 DELETE FROM Funcionarios WHERE NomeFuncionarios = "Rafael Borges";
-
 
 #Consulta com Junção: JOIN, INNER JOIN, LEFT JOIN e RIGHT JOIN.
 #Consulta os Funcionarios e o Departamento que pertecem.
@@ -102,7 +103,6 @@ INNER JOIN Departamentos ON Funcionarios.IDDepartamentos = Departamentos.IDDepar
 SELECT Materiais.NomeMaterial, Fornecedores.NomeFornecedores FROM Materiais 
 LEFT JOIN Fornecedores ON Materiais.IDFornecedores = Fornecedores.IDFornecedores;
 
-
 #Consulta com agregação: COUNT, AVG, SUM, MIN e MAX.
 #Conta quantos funcionarios pertecem a determinado departamento
 SELECT IDDepartamentos, COUNT(NomeFuncionarios) AS Quantidadefuncionarios FROM Funcionarios
@@ -111,7 +111,6 @@ GROUP BY IDDepartamentos;
 #Seleciona as médias de salarios por departamento
 SELECT IDDepartamentos, AVG(SalarioFuncionarios) AS MediaSalario FROM Funcionarios
 GROUP BY IDDepartamentos;
-
 
 #Consulta com SubConsulta: Consulta(Consulta)
 #Seleciona os Funcionarios com salário acima da Média.
@@ -123,13 +122,3 @@ SELECT AVG(SalarioFuncionarios) FROM Funcionarios);
 SELECT NomeFuncionarios FROM Funcionarios
 WHERE SalarioFuncionarios = (
 SELECT MIN(SalarioFuncionarios) FROM Funcionarios);
-
-
-SELECT * FROM clientes;SELECT * FROM fornecedores;
-SELECT * FROM funcionarios;
-SELECT * FROM materiais;
-SELECT * FROM projetos;
-SELECT * FROM departamentos;
-
-SET SQL_SAFE_UPDATES = 0;
-
