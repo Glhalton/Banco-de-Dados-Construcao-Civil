@@ -14,6 +14,18 @@ INSERT INTO Clientes (NomeClientes, TelefoneClientes, EnderecoClientes, CPFClien
 ('Juliana Arocha', 11109876543, 'Rua da Paz, 600, Goiânia - GO', 90123456789, NULL),
 ('TJ gaming', 11098765432, 'Rua dos Trabalhadores, 700, Brasília - DF', NULL, 23001229000146);
 
+INSERT INTO Departamentos (NomeDepartamento) VALUES
+("Departamento de Engenharia"),
+("Departamento de Arquitetura"),
+("Departamento de Orçamentos e custos"),
+("Departamento de Planejamento de Controle"),
+("Departamento de Qualidade"),
+("Departamento de Segurança no Trabalho"),
+("Departamento de Suprimentos e Compras"),
+("Departamento de Recursos Humanos"),
+("Departamento Juridico"),
+("Departamento de Meio ambiente e Sustentabilidade");
+
 INSERT INTO Funcionarios (IDDepartamentos, NomeFuncionarios, CargoFuncionarios, MatriculaFuncionarios, TelefoneFuncionarios, EnderecoFuncionarios, CPFFuncionarios, SalarioFuncionarios) VALUES
 (1, 'João Pereira', 'Engenheiro Civil', 1001, 11900000001, 'Rua das Acácias, 101, São Paulo - SP', 12345678900, 3000.00),
 (1, 'Mariana Silva', 'Enegenheiro de Projetos', 1002, 11800000002, 'Avenida Paulista, 1100, São Paulo - SP', 23456789001, 3200.00),
@@ -73,30 +85,51 @@ INSERT INTO Projetos (IDClientes, IDFuncionarios, IDMateriais, NomeProjeto, Desc
 (9, 9, 9, 'Shopping Center', 'Construção de um novo shopping center em área urbana.', 1500000.00, '2024-09-10', '2025-12-10'),
 (10, 10, 10, 'Edificio Comercial', 'Construção de um edificio comercial pequeno com 4 quartos em uma area ponto de venda.', 600000.00, '2024-10-01', '2025-08-01');
 
-INSERT INTO Departamentos (NomeDepartamento) VALUES
-("Departamento de Engenharia"),
-("Departamento de Arquitetura"),
-("Departamento de Orçamentos e custos"),
-("Departamento de Planejamento de Controle"),
-("Departamento de Qualidade"),
-("Departamento de Segurança no Trabalho"),
-("Departamento de Suprimentos e Compras"),
-("Departamento de Recursos Humanos"),
-("Departamento Juridico"),
-("Departamento de Meio ambiente e Sustentabilidade");
-
+# Update e Delete de informações de um funcionario
 UPDATE Funcionarios SET SalarioFuncionarios = 0.50 WHERE NomeFuncionarios = "Rosival Soares";
-UPDATE Funcionarios SET CargoFuncionarios = "Auxiliar de TI" WHERE NomeFuncionarios = "Estagiario" ;
+UPDATE Funcionarios SET CargoFuncionarios = "Auxiliar de TI" WHERE CargoFuncionarios = "Estagiario" ;
 
 DELETE FROM Funcionarios WHERE NomeFuncionarios = "Rosival Soares";
 DELETE FROM Funcionarios WHERE NomeFuncionarios = "Rafael Borges";
 
-SELECT Funcionarios.NomeFuncionarios, Departamentos.NomeDepartamento FROM Funcionarios INNER JOIN Departamentos 
-ON Funcionarios.IDDepartamentos = Departamentos.IDDepartamentos; 
 
-SELECT * FROM clientes;
-SELECT * FROM fornecedores;
+#Consulta com Junção: JOIN, INNER JOIN, LEFT JOIN e RIGHT JOIN.
+#Consulta os Funcionarios e o Departamento que pertecem.
+SELECT Funcionarios.NomeFuncionarios, Departamentos.NomeDepartamento FROM Funcionarios
+INNER JOIN Departamentos ON Funcionarios.IDDepartamentos = Departamentos.IDDepartamentos; 
+
+#Lista todos os materiais a esquerda e verifica quais fornecedores corresponde ao meterial a direita.
+SELECT Materiais.NomeMaterial, Fornecedores.NomeFornecedores FROM Materiais 
+LEFT JOIN Fornecedores ON Materiais.IDFornecedores = Fornecedores.IDFornecedores;
+
+
+#Consulta com agregação: COUNT, AVG, SUM, MIN e MAX.
+#Conta quantos funcionarios pertecem a determinado departamento
+SELECT IDDepartamentos, COUNT(NomeFuncionarios) AS Quantidadefuncionarios FROM Funcionarios
+GROUP BY IDDepartamentos;
+
+#Seleciona as médias de salarios por departamento
+SELECT IDDepartamentos, AVG(SalarioFuncionarios) AS MediaSalario FROM Funcionarios
+GROUP BY IDDepartamentos;
+
+
+#Consulta com SubConsulta: Consulta(Consulta)
+#Seleciona os Funcionarios com salário acima da Média.
+SELECT NomeFuncionarios, SalarioFuncionarios FROM Funcionarios 
+WHERE SalarioFuncionarios > (
+SELECT AVG(SalarioFuncionarios) FROM Funcionarios);
+
+#Seleciona o Funcionario com menor Salário.
+SELECT NomeFuncionarios FROM Funcionarios
+WHERE SalarioFuncionarios = (
+SELECT MIN(SalarioFuncionarios) FROM Funcionarios);
+
+
+SELECT * FROM clientes;SELECT * FROM fornecedores;
 SELECT * FROM funcionarios;
 SELECT * FROM materiais;
 SELECT * FROM projetos;
 SELECT * FROM departamentos;
+
+SET SQL_SAFE_UPDATES = 0;
+
